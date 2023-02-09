@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+</head>
+<body>
+
+  <!-- ........................Header Section.................. -->
+    <header id="header">
+      <div class="header1" style="display: none;">
+        <div class="logo">Ecommerce</div>
+        <div class="search-container">
+          <input type="search" id="search" placeholder="product name,catagory name,etc." name="search">
+          <button type="submit" class="header_btn">Search</button>
+        </div>
+
+        <div class="login">
+        <a href="login.html"  class="header_btn">Login</a>
+        <a href="cart.html"  class="header_btn">Bucket</a>
+        </div>
+      </div>
+
+
+   <!-- ........................Navbar Section.................. -->
+    <div class="navbar" style="display: none;" >
+      <a href="#home">Home</a>
+      <a href="#product-page">All Products</a>
+
+      <div class="dropdown">
+        <div class="dropbtn">Women<i class="fa fa-caret-down"></i></div>
+        <div class="dropdown-content">
+          <a href="#">All Products</a>
+          <a href="#">Dresses</a>
+          <a href="#">Pants</a>
+          <a href="#">Skirts</a>
+        </div>
+      </div> 
+       
+      <div class="dropdown">
+        <div class="dropbtn">Men<i class="fa fa-caret-down"></i></div>
+        <div class="dropdown-content">
+          <a href="#">All products</a>
+          <a href="#">Shirts</a>
+          <a href="#">Pants</a>
+          <a href="#">Hoodies</a>
+        </div>
+      </div>
+       
+        <a href="#">Kids</a>
+        <a href="#contact">Contact</a>
+    </div>
+  </header>
+   
+  <!-- ...........................Home Page.......................... -->
+  <section id="home">
+    <div class="home-page">
+    <img src="home.jpg" alt="HOME_PAGE" class="home-img"></img>
+    </div>
+    <div class="slogan"><h2>"India’s Largest Online Fashion Store."</h2></div>
+  </section>
+   
+
+
+  <!-- .......................All Product Page.......................... -->
+  <section id="products_page" ></section>
+  <section id="product-page" style="display: none;" >
+    <h1 class="heading">All Products</h1>
+    <div class="product-items">
+      <div class="item">
+       <div class="img-align"><img src="product-images\red-dress.jpg" class="product-img"></div>
+         <div><h3 style="text-align: center;">Red Dress</h3></div>
+         <div class="product-p"><p style="color: rgb(53, 50, 50);">Red solid fit & flare dress V-neck Three-quarter,
+          puff sleeve Above knee length in flared hem Georgette fabric  Zip closure</p></div> 
+        
+      <div style="text-align: center;"><button type="button" class="product-btn"><a href="cart.html">Add To Bucket</a></button></div>
+      </div>
+
+    <div class="item">
+       <div class="img-align"><img src="product-images\T-shirt.jpg" class="product-img"></div>
+         <div><h3 style="text-align: center;">T-shirt</h3></div>
+         <div class="product-p"><p style="color: rgb(53, 50, 50);">White Tshirt for women Other solid Regular length
+          Round neck Short, regular sleeves Knitted cotton fabric with solid material</p></div> 
+        
+      <div style="text-align: center;"><button type="button" class="product-btn"><a href="cart.html">Add To Bucket</a></button></div>
+    </div>
+
+    <div class="item">
+      <div class="img-align"><img src="product-images\black-pant.jpg" class="product-img"></div>
+        <div><h3 style="text-align: center;">Black Pant</h3></div>
+        <div class="product-p"><p style="color: rgb(53, 50, 50);">Black woven formal Regular fit Mid-rise
+         Length: regular Pattern: solid Flat-front, with no pleats design Feature: plain 2 pocket</p></div> 
+       
+     <div style="text-align: center;"><button type="button" class="product-btn"><a href="cart.html">Add To Bucket</a></button></div>
+  </div>
+
+    <div class="item">
+      <div class="img-align"><img src="product-images\pink dress.jpg" class="product-img"></div>
+        <div><h3 style="text-align: center;">Pink Dress</h3></div>
+        <div class="product-p"><p style="color: rgb(53, 50, 50);"> floral solid fit & flare dress Round neck
+        Three-quarter, regular sleeves length in flared fabric Button closure
+        Comes with a belt</p></div> 
+       
+     <div style="text-align: center;"><button type="button" class="product-btn"><a href="cart.html">Add To Bucket</a></button></div>
+   </div>
+
+    
+
+   <div class="item">
+    <div class="img-align"><img src="product-images\bluee jeans.jpg" class="product-img"></div>
+      <div><h3 style="text-align: center;">Blue Jeans</h3></div>
+      <div class="product-p"><p style="color: rgb(53, 50, 50);">Blue jeans formal Regular fit Mid-rise
+        Length: regular Pattern: solid Flat-front, with no pleats design Feature: plain 2 pocket</p></div> 
+     
+   <div style="text-align: center;"><button type="button" class="product-btn"><a href="cart.html">Add To Bucket</a></button></div>
+ </div>
+  </div>
+    
+  </section>
+
+
+   <!-- ...........................Contact Page.......................... -->
+  <section id="contact">
+    <h1 class="heading">Contact</h1>
+    <div class="f_contact">
+    <div><img src="girl.jpg" class="pf-img"></div>
+    <div class="contact-form">
+      <div><label for="text">Name:</label></div>
+      <div><input type="text" placeholder="Enter Your Name"></div>
+
+      <div><label for="email">E-mail:</label></div>
+      <div><input type="email" placeholder="Enter Your E-mail"></div>
+
+      <div><label for="text">Message:</label></div>
+     <div><textarea name="message" rows="3" cols="30" placeholder="Enter Your Message..."></textarea></div>
+      
+    <div><button type="submit" class="form-btn">Submit</button></div>
+    </div>
+    </div>
+  </section>
+
+<!-- ...........................Footer Section.......................... -->
+ <footer id="footer">
+  <div class="foot">
+  <div class="footer_1">
+  <div>
+    <h4>Women</h4>
+  <ul>
+    <li>Dresses</li>
+    <li>Pants</li>
+    <li>Skirts</li>
+  </ul>
+</div>
+
+<div>
+  <h4>Men</h4>
+<ul>
+  <li>Shirts</li>
+  <li>Pants</li>
+  <li>Hoodies</li>
+</ul>
+</div>
+
+<div>
+  <h4>Kids</h4>
+</div>
+
+<div>
+  <h4>Links</h4>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
+</div>
+<hr>
+<div class="copyright">copyright &#169;Ecommerce 2022-23</div>
+</div>
+</footer>
+</body>
+<script src="./headers.js"></script>
+<script src="./product.js"></script>
+<!-- location.pathname = "index.html" -->
+</html>

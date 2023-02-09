@@ -1,0 +1,378 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    /* font-family:Lucida Sans ; */
+}
+
+/* ...................... .header section......................... */
+.header1{
+   display: flex;
+   top: 0;
+   /* overflow: hidden; */
+   position: sticky;
+   z-index: 100;
+   justify-content: space-between;
+   background-color: rgb(42, 42, 42);
+   height: 65px;
+   width: 100%;
+   
+}
+
+.logo{
+    color:#ffff00b3;
+    font-family: Brush Script MT;
+    font-size:xxx-large;
+    font-stretch: expanded;
+    text-shadow:  1px aliceblue;
+    margin-left: 4%;
+}
+
+.search-container{
+    float: right;
+    /* margin-left: 10%; */
+}
+
+.search-container input{
+    padding: 4px;
+    margin-top: 16px;
+    border: none;
+    width: 400px;
+    font-size: 16px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid white;
+}
+
+.search-container button {
+    float: right;
+    padding: 4px;
+    margin-top: 16px;
+    /* margin-right: 16px; */
+    border: none;
+    cursor: pointer;
+    background-color:#ffff00b3 ;
+    font-weight: bold;
+    font-size: 16px;
+    border-top-right-radius: 10px;
+    border: 1px solid #ffff00b3;
+}
+ 
+
+.login{
+    margin-right: 4%; 
+    /* margin-left: 10%; */
+    column-gap: 10px;  
+}
+
+
+.header_btn{
+    float: left; 
+    padding: 4px;
+    margin-top: 16px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    background-color:#ffff00b3 ;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 3px;
+    border-style: none; 
+   
+}
+
+.header_btn a{
+   text-decoration: none;
+    color: black;  
+}
+
+.header_btn:hover{
+    color:white;
+    background-color: rgb(33, 124, 33);  
+}
+
+.header_btn a :hover{
+    color:white;
+    background-color: rgb(33, 124, 33);  
+}
+
+
+/* ......................Navbar Page......................... */
+.navbar{
+    overflow: hidden;
+    display: flex;
+    background-color:rgb(235, 235, 235);
+    /* /* height: 45px; */
+   
+    position: static; 
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif; 
+    justify-content: center;
+    font-size: 15px;
+    border-bottom-style: groove;
+    background-clip: border-box;
+    z-index: 99;
+}
+   
+
+.navbar a{
+    display: flex;
+    padding: 12px;
+    text-decoration: none;
+    text-align: center;
+    color:black;
+}
+
+
+.navbar a:hover{
+    /* color:white; */
+    background-color: rgb(174, 190, 33);
+}
+ 
+.dropdown {
+    display: flex;
+      
+}
+
+.dropbtn{
+    border-style: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute; 
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 40px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    /* display: block; */
+  }
+
+.dropbtn:hover{
+    background-color: rgb(174, 190, 33);
+    
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ...................Home Page.......................... */
+
+.home-page{
+    overflow-x: hidden;
+    position: inherit;
+    
+}
+
+ .home-img{
+    width: 100%;
+   
+}
+.slogan{
+    top: 0;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(254, 224, 184);
+    font-size: larger;
+}
+
+ /* ...................Product Page.......................... */
+
+/* #product-page{
+    display: flex;
+} */
+
+.product-items{
+    display: flex;
+    justify-content: center;  
+    margin:20px;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+    width: 250px;
+    border: 1px solid black;
+    background-color: #ebe8e8;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.img-align{
+    display: flex;
+    justify-content: center;
+}
+
+.product-img{
+    width: 220px;
+    height: 220px;
+}
+
+.product-p{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 5px; 
+    
+}
+.product-btn{
+    width: 120px;
+    height: 30px;
+    background-color: rgb(174, 190, 33);
+    border-style: none;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-top: 10px;
+    /* padding: 5px; */
+}
+
+.product-btn a{
+    text-decoration: none;
+    color: black;
+}
+
+.product-btn:hover{
+    color: white;
+    background-color:  rgb(204, 224, 28);
+}
+
+
+/* ...................... .Contact Page......................... */
+#contact{
+    width: 100%;
+    height: 350px; 
+}
+ 
+.pf-img{
+    width: 250px;
+    height: 280px;
+}
+
+
+ .heading{
+     margin-top: 30px;
+     text-align: center;
+     font-size: 30px;
+ }
+  
+ .f_contact{
+   display: flex;
+   justify-content:center; 
+   margin-top: 20px;
+ } 
+ 
+ .contact-form{
+     margin-left: 60px; 
+ }
+  
+ .contact-form label{
+     font-weight: bold;
+ }
+ 
+ .contact-form input{
+     border-radius: 3px solid grey;
+     width: 300px;
+     height:20px;
+     margin-bottom: 20px;  
+ }
+ 
+ .contact-form textarea{
+     border-radius: 3px solid grey;
+     margin-bottom: 20px; 
+     width: 300px; 
+ }
+ 
+ .form-btn{
+     font-weight: bold;
+     width: 300px;
+     height: 30px;
+     border-style: none;
+     background-color:rgb(174, 190, 33);
+     border-radius: 3px;
+ }
+ 
+ .form-btn:hover{
+     color:white;
+     background-color: rgb(15, 110, 15);  
+ }
+ 
+ /* .contact-img{
+     width: 350px;
+     height: 300px;
+ } */
+
+
+/* ...................... Footer Page......................... */
+.foot{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif; 
+    position:relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+.footer_1{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    padding-bottom: 15px;
+}
+
+#footer h4{
+    padding: 10px 0 5px 0;
+    text-align: center;
+    font-size: large;
+}
+
+#footer ul li{
+    list-style: none;
+    font-size: 14px;
+    padding-top: 5px;
+   
+    text-align: center;   
+}
+
+#footer ul li a{
+    border-style: none;
+    color: white;
+    border-bottom: none;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+hr {
+    width: 70%;
+    height: .0.5px;
+    margin: 0 15% 0 15%;
+    background-color: white;
+} 
+
+.copyright{
+    /* position: fixed; */
+    text-align: center;
+    padding: 5px;  
+}
+
+
+
