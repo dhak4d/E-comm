@@ -12,6 +12,7 @@
    /* overflow: hidden; */
    position: sticky;
    z-index: 100;
+   overflow-x: hidden;
    justify-content: space-between;
    background-color: rgb(42, 42, 42);
    height: 65px;
@@ -237,6 +238,7 @@
     border-radius: 3px;
     font-weight: bold;
     margin-top: 10px;
+    cursor: pointer;
     /* padding: 5px; */
 }
 

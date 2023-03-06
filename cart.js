@@ -1,6 +1,6 @@
 
 console.log('cart.js')
-
+function show_ui() {
 const section=document.createElement('section')
 section.id='cart'
 
@@ -16,63 +16,10 @@ const h3 = document.createElement('h3')
 h3.innerHTML='Items In Cart'
 item1.appendChild(h3)
 
-const hr = document.createElement('hr')
-hr.style.color='black'
-item1.appendChild(hr)
-
-
-
 const item2 = document.createElement('div')
 item2.classList.add('item-2')
+item2.id='items'
 div.appendChild(item2)
-
-const img = document.createElement("img");
-img.setAttribute("src", 'product-images/red-dress.jpg')
-img.height= '180px'
-img.width = '150px'
-item2.appendChild(img);
-
-
-const item3 = document.createElement('div')
-item3.classList.add('item-3')
-div.appendChild(item3)
-
-const h4 = document.createElement('h4')
-h4.innerHTML='Red Dress'
-item3.appendChild(h4)
-
-const price = document.createElement('div')
-price.classList.add('item-price')
-price.innerHTML = '$15'
-item3.appendChild(price)
-
-const dltBtn = document.createElement('div')
-dltBtn.classList.add('delete')
-item3.appendChild(dltBtn)
-
-const imgBtn = document.createElement("button");
-imgBtn.setAttribute("src", 'delete.png')
-imgBtn.height= '20px'
-imgBtn.width = '20px'
-
-
-const item4 = document.createElement('div')
-item4.classList.add('item-4')
-div.appendChild(item4)
-
-const minusBtn = document.createElement('button')
-minusBtn.style.fontWeight = 'bold'
-minusBtn.innerHTML = '-'
-item4.appendChild( minusBtn)
-
-const input = document.createElement('input')
-input.setAttribute("type", 'text')
-item4.appendChild( input)
-
-const plusBtn = document.createElement('button')
-plusBtn.style.fontWeight = 'bold'
-plusBtn.innerHTML = '+'
-item4.appendChild(plusBtn)
 
 
 const nextGrid = document.createElement('div')
@@ -82,23 +29,168 @@ section.appendChild(nextGrid )
 
 const head = document.createElement('div')
 head.classList.add('head')
-section.appendChild(nextGrid )
+nextGrid.appendChild(head )
 
-const h3 = document.createElement('h3')
-h4.innerHTML='Summary'
-h4.style.color = 'black'
-head.appendChild(h3)
+const h3n = document.createElement('h3')
+h3n.innerHTML='Summary'
+h3n.style.color = 'black'
+head.appendChild(h3n)
 
-
-
-
-
-
-
+const gridCol = document.createElement('div')
+gridCol.classList.add('grid-col-1')
+gridCol.innerHTML='Cost'
+nextGrid.appendChild(gridCol)
 
 
+const col2 = document.createElement('div')
+col2.classList.add('grid-col-2')
+col2.innerHTML='Shipping'
+gridCol.appendChild(col2)
+
+const col5 = document.createElement('div')
+col5.classList.add('grid-col-5')
+col5.innerHTML='$15'
+col5.id='cost'
+nextGrid.appendChild(col5)
+
+const col2$ = document.createElement('div')
+col2$.classList.add('grid-col-2')
+col2$.innerText='$5'
+col5.appendChild(col2$)
 
 
+const col3 = document.createElement('div')
+col3.classList.add('grid-col-3')
 
+const hr = document.createElement('hr');
+col3.appendChild(hr);
+
+col3.innerHTML='Total'
+col3.style.fontWeight = 'bold'
+nextGrid.appendChild(col3)
+
+const col5$ = document.createElement('div')
+col5$.classList.add('grid-col-5')
+col5$.innerHTML='$20'
+col5$.id='total'
+nextGrid.appendChild(col5$)
+
+const nextGridBtn = document.createElement('div')
+nextGridBtn.classList.add('next-grid-btn')
+nextGrid.appendChild(nextGridBtn)
+
+const checkout= document.createElement('button')
+checkout.innerHTML='Checkout'
+nextGridBtn.appendChild(checkout)
 
 document.getElementById('carts').appendChild(section)
+}
+
+function add_item(product, items_id) {
+	const { id, title, price, image, qnt } = product;
+	const items = document.createElement('div');
+	items.className = 'items';
+
+	const itemsimages = document.createElement('div');
+	itemsimages.className = 'items-images';
+	items.appendChild(itemsimages);
+
+	const img = document.createElement('img');
+	itemsimages.appendChild(img);
+	img.src = image;
+
+	const itemsdetails = document.createElement('div');
+	itemsdetails.className = 'item-detail';
+	items.appendChild(itemsdetails);
+
+	const itemsdetailsTitle = document.createElement('div');
+	itemsdetailsTitle.innerText = title;
+	itemsdetails.appendChild(itemsdetailsTitle);
+
+	const itemsdetailsPrice = document.createElement('div');
+	itemsdetailsPrice.innerText = `$${price}`;
+	itemsdetails.appendChild(itemsdetailsPrice);
+
+	const itemsdetailsDelete = document.createElement('div');
+	itemsdetails.appendChild(itemsdetailsDelete);
+
+	const itemsdetailsDeleteButton = document.createElement('button');
+	itemsdetailsDeleteButton.textContent = 'Delete';
+	itemsdetailsDeleteButton.setAttribute('onclick', `deleteProduct(${id})`);
+	itemsdetailsDelete.appendChild(itemsdetailsDeleteButton);
+
+	const itemQty = document.createElement('div');
+	itemQty.className = 'item-qty';
+
+	const itemQtyMinusButton = document.createElement('button');
+	itemQtyMinusButton.innerText = '-';
+	itemQtyMinusButton.setAttribute('onclick', `decreaseProduct(${id})`);
+	itemQty.appendChild(itemQtyMinusButton);
+
+	const itemQtyInput = document.createElement('input');
+	itemQtyInput.type = 'text';
+	itemQtyInput.value = qnt;
+	itemQtyInput.id = id;
+	itemQtyInput.disabled = true;
+	itemQty.appendChild(itemQtyInput);
+
+	const itemQtyPlusButton = document.createElement('button');
+	itemQtyPlusButton.innerText = '+';
+	itemQtyPlusButton.setAttribute('onclick', `increaseProduct(${id})`);
+	itemQty.appendChild(itemQtyPlusButton);
+	items.appendChild(itemQty);
+
+	document.getElementById(items_id).appendChild(items);
+}
+
+show_ui();
+onload_data();
+function onload_data() {
+	document.getElementById('items').innerHTML = '';
+	let get_product = localStorage.getItem('products');
+	get_product = JSON.parse(get_product);
+
+	let price = 0;
+	// console.log(get_product);
+	for (let i in get_product) {
+		price = price + parseFloat(get_product[i]['price']) * Number(get_product[i]['qnt']);
+		add_item(get_product[i], 'items');
+	}
+	document.getElementById('cost').innerHTML = `$${price}`;
+	document.getElementById('total').innerHTML = `$${price + 5}`;
+}
+
+function deleteProduct(id) {
+	console.log(id);
+	let get_product = localStorage.getItem('products');
+	get_product = JSON.parse(get_product);
+
+	delete get_product[id];
+	console.log(get_product);
+	localStorage.setItem('products', JSON.stringify(get_product));
+	onload_data();
+}
+
+function increaseProduct(id) {
+	let get_product = localStorage.getItem('products');
+	get_product = JSON.parse(get_product);
+	let inc = Number(document.getElementById(id).value);
+	inc++;
+	get_product[id]['qnt'] = inc;
+	localStorage.setItem('products', JSON.stringify(get_product));
+	onload_data();
+}
+
+function decreaseProduct(id) {
+	let get_product = localStorage.getItem('products');
+	get_product = JSON.parse(get_product);
+	let inc = Number(document.getElementById(id).value);
+	if (inc <= 1) {
+		alert('Stoped');
+		return;
+	}
+	inc--;
+	get_product[id]['qnt'] = inc;
+	localStorage.setItem('products', JSON.stringify(get_product));
+	onload_data();
+}

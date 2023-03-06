@@ -49,6 +49,12 @@ const products = [
 
 ]
 
+show_products('all_proc', products);
+
+function show_products(id, products) {
+	const all_proc = document.getElementById(id);
+
+
 const section = document.createElement('section');
 section.id = 'product-page';
 
@@ -60,6 +66,7 @@ section.appendChild(h1);
 const divProductItems = document.createElement("div");
 divProductItems.setAttribute("class", "product-items");
 section.appendChild(divProductItems);
+
 
 for(i=0; i<products.length; i++)
 {
@@ -104,16 +111,46 @@ buttonCart.setAttribute("type", "button");
 buttonCart.setAttribute("class", "product-btn");
 divBtn.appendChild(buttonCart);
 
-const aAddtoCart = document.createElement("a");
-aAddtoCart .setAttribute("href", "cart.html");
-aAddtoCart .innerHTML = "Add To Bucket";
-buttonCart.appendChild(aAddtoCart);
+
+// const aAddtoCart = document.createElement("a");
+// aAddtoCart .setAttribute("href", "cart.html");
+  buttonCart .innerHTML = "Add To Bucket";
+// buttonCart.appendChild(aAddtoCart);
+
+buttonCart.setAttribute('onclick', `add_to_cart(${id})`);
 
 divProductItems.appendChild(divItem);
 }
 
 document.getElementById('products_page').appendChild(section)
+}
 
+
+function add_to_cart(id) {
+	console.log(id);
+	let fetch_product = products.filter((product) => product.id == id);
+	console.log(fetch_product);
+	let get_items = localStorage.getItem('products');
+	get_items = JSON.parse(get_items);
+	console.log(get_items);
+	if (get_items !== null) {
+		if (id in get_items) {
+			window.alert('Products Already Added');
+			return;
+		} else {
+			let temp = fetch_product[0];
+			temp['qnt'] = 1;
+			get_items[id] = temp;
+			localStorage.setItem('products', JSON.stringify(get_items));
+		}
+	} else {
+		let obj = {};
+		let temp = fetch_product[0];
+		temp['qnt'] = 1;
+		obj[id] = temp;
+		localStorage.setItem('products', JSON.stringify(obj));
+	}
+}
 
 
 

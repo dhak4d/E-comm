@@ -8,42 +8,44 @@
     <link rel="stylesheet" href="cart.css">
 </head>
 <body>
-  <section id="carts"></section>
-    <section id="cart" style="display:none;">
+ 
+    
+ <section id="carts"></section>
+    <section id="cart"  style="display:none;">
+      <div class="item-1"><h3>Items In Cart<hr style="color: black;"></h3></div>
       <div class="cart-item">
-        <div class="item-1"><h3>Items In Cart<hr style="color: black;"></h3></div>
+       
         <div class="item-2"><img src="product-images\red-dress.jpg" width="150px" height="180px"></div>
 
         <div class="item-3">
           <h4>Red Dress</h4>
           <div class="item-price">$15</div>
-          <div class="delete"><button type="button"><img src="delete.png" width="20px" height="20px"></button></div>
+          <div class="delete"><img src="delete.png" width="20px" height="20px"></div>
         </div>
 
         <div class="item-4">
            <button type="button" style="font-weight: bold;">-</button><input type="text"><button type="button" style="font-weight: bold;">+</button>
         </div>
-        </div>
-      </div> 
       </div>
 
+      
       <div class="next-grid">
         <div class="head"><h3>Summary<hr style="color: black;"></h3></div>
-        <div class="grid-col-1">cost
-        <div class="grid-col-2">shipping</div></div>
+        <div class="grid-col-1">Cost
+        <div class="grid-col-2">Shipping</div></div>
         <div class="grid-col-5">$15
-        <div class="grid-col-2">5</div></div>
+        <div class="grid-col-2">$5</div></div>
         
         <div class="grid-col-3"><b><hr>Total</b></div>
-          <div class="grid-col-5"><b><hr>$20</b></div>
+        <div class="grid-col-5"><b><hr>$20</b></div>
         
         <div class="next-grid-btn"><button type="button">Checkout</button></div>
-      <!-- </div> -->
+      </div>
     </section>
 
     
        
-  </div>
+  
 </body>
 <script src="cart.js"></script>
 </html>
